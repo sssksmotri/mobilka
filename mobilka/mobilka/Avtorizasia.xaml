@@ -1,0 +1,33 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilka.Avtorizasia"
+             BackgroundColor="#87A0B2">
+    <ContentPage.Resources>
+        <ResourceDictionary>
+            <Style TargetType="Entry" x:Key="MyEntryStyle">
+                <Setter Property="MaxLength" Value="80" />
+            </Style>
+            <Style TargetType="Button" x:Key="MyButtonStyle">
+                <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+                <Setter Property="Background" Value="#512DA8" />
+                <Setter Property="TextColor" Value="White" />
+                <Setter Property="CornerRadius" Value="10" />
+            </Style>
+        </ResourceDictionary>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+            <Label Text="F a s t - S h o p" FontSize="36"  TextColor="Black" HorizontalOptions="Center" />
+            <Frame CornerRadius="30" VerticalOptions="Start"  HorizontalOptions="Center" WidthRequest="300" HeightRequest="350">
+                <StackLayout Spacing="20" Padding="20">
+                    <Label Text="Вход" FontSize="24" TextColor="black" HorizontalOptions="Center" />
+                    <Entry x:Name="login1Entry" Placeholder="login" Style="{StaticResource MyEntryStyle}" />
+                    <Entry x:Name="PasswordEntry" Placeholder="Пароль" IsPassword="True" Style="{StaticResource MyEntryStyle}" />
+                    <Button Text="Войти" Clicked="Login_Clicked" Style="{StaticResource MyButtonStyle}" />
+                    <Button Text="Зарегистрироваться" Clicked="Registration_Clicked" HorizontalOptions="FillAndExpand" Style="{StaticResource MyButtonStyle}" />
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

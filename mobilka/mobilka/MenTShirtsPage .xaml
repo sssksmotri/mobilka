@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilka.MenTShirtsPage"
+             BackgroundColor="#87A0B2">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Bold"/>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="MaxLength" Value="80"/>
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+        <Style TargetType="ImageButton">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#512DA8" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout Padding="20">
+
+                    <!-- Header Section -->
+                    <Label Text="Мужские футболки" FontSize="28" FontAttributes="Bold" TextColor="#333333" HorizontalTextAlignment="Center" Margin="0,20,0,10" />
+
+                    <!-- Filters Section -->
+                    <StackLayout Orientation="Horizontal" Spacing="10" Margin="0,10,0,20">
+                        <Picker x:Name="brendPicker" Title="Бренд" FontSize="16" />
+                        <Picker x:Name="sizePicker" Title="Размер" FontSize="16" />
+                        <Picker x:Name="colorPicker" Title="Цвет" FontSize="16" />
+                        <StackLayout Orientation="Horizontal">
+                        <Button Text="Поиск" Clicked="SearchButton_Clicked" BackgroundColor="#512DA8" TextColor="White" CornerRadius="8" />
+                        <Button Text="Сброс" Clicked="SbrosButton_Clicked" BackgroundColor="#512DA8" TextColor="White" CornerRadius="8" />
+                        </StackLayout>
+                        </StackLayout>
+
+                    <!-- Product Display Section -->
+
+                    <StackLayout x:Name="tShirtsStackLayout" Spacing="15">
+                        <!-- Dynamically populated T-shirt items go here -->
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+
+            <!-- Bottom Navigation Bar -->
+            <Frame CornerRadius="15" BorderColor="LightGray" WidthRequest="650" Padding="10">
+                <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Spacing="20">
+                    <StackLayout>
+                        <ImageButton Source="glavnay.png" Clicked="Navigate_Clicked1" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Главная" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="profile.png" Clicked="Navigate_Clicked2" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Профиль" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="izbrannoe.png" Clicked="Navigate_Clicked3" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Избранное" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="korzina.png" Clicked="Navigate_Clicked4" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Корзина" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

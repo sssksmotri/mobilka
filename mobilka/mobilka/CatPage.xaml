@@ -1,0 +1,73 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilka.CatPage"
+              BackgroundColor="#F5F5F5">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Bold"/>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="MaxLength" Value="80"/>
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+        <Style TargetType="ImageButton">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#512DA8" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout Padding="10" Spacing="10">
+                    <Label Text="Корзина" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+                    <!-- Display cart items vertically -->
+                    <StackLayout x:Name="cartItemsLayout" Spacing="10"></StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <!-- Move total price label to a separate row -->
+            <Label x:Name="totalPriceLabel" Text="Общая стоимость: $0.00" FontSize="28" HorizontalOptions="StartAndExpand" />
+            <StackLayout  Orientation="Horizontal" HorizontalOptions="Center" VerticalOptions="End" Spacing="20">
+                <Button Text="Очистить корзину" Clicked="ClearCartButton_Clicked" BackgroundColor="#FF5722" TextColor="White" CornerRadius="10" />
+                <Button Text="Оплатить" Clicked="PayButton_Clicked" BackgroundColor="#512DA8" TextColor="White" CornerRadius="10" />
+            </StackLayout>
+            <!-- Navigation buttons at the bottom -->
+            <Frame CornerRadius="15" BorderColor="LightGray" WidthRequest="650" Padding="10">
+                <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center" VerticalOptions="End" Spacing="20">
+                    <StackLayout>
+                        <ImageButton Source="glavnay.png" Clicked="Navigate_Clicked1" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Главная" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="profile.png" Clicked="Navigate_Clicked2" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Профиль" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="izbrannoe.png" Clicked="Navigate_Clicked3" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Избранное" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="korzina.png" Clicked="Navigate_Clicked4" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Корзина" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

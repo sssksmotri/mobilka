@@ -1,0 +1,59 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilka.OrderHistory"
+             BackgroundColor="#F5F5F5">
+    <!-- Установка фона страницы -->
+
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="VerticalOptions" Value="Center" />
+        </Style>
+        <Style TargetType="StackLayout">
+            <Setter Property="Padding" Value="10" />
+            <Setter Property="Spacing" Value="10" />
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="BackgroundColor" Value="#512DA8" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+
+    <ContentPage.Content>
+        <StackLayout>
+        <ScrollView>
+            <StackLayout x:Name="mainLayout">
+                <!-- Ваше содержимое будет добавлено программно в этот StackLayout -->
+            </StackLayout>
+        </ScrollView>
+
+        <!-- Нижняя панель с кнопками -->
+        <Frame CornerRadius="15" BorderColor="LightGray" WidthRequest="650" Padding="10">
+    <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Spacing="20">
+        <StackLayout>
+            <ImageButton Source="glavnay.png" Clicked="Navigate_Clicked1" BackgroundColor="Transparent" HeightRequest="40" />
+            <Label Text="Главная" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+        </StackLayout>
+        <StackLayout>
+            <ImageButton Source="profile.png" Clicked="Navigate_Clicked2" BackgroundColor="Transparent" HeightRequest="40" />
+            <Label Text="Профиль" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+        </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="izbrannoe.png" Clicked="Navigate_Clicked3" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Избранное" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+            <ImageButton Source="korzina.png" Clicked="Navigate_Clicked4" BackgroundColor="Transparent" HeightRequest="40" />
+            <Label Text="Корзина" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+        </StackLayout>
+    </StackLayout>
+</Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

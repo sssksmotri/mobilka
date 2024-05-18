@@ -1,0 +1,87 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilka.Zhenskoe"
+                      BackgroundColor="#87A0B2">
+    <ContentPage.Content>
+        <StackLayout>
+            <ScrollView>
+                <StackLayout Margin="10">
+                    <Label Text="Fast-Shop" HorizontalOptions="Center" VerticalOptions="Start" FontSize="36" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" />
+                    <Frame BackgroundColor="#F5F5F5" CornerRadius="20" Padding="10" Margin="0,0,0,20">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Placeholder="Поиск..." x:Name="SearchEntry" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                            <StackLayout Orientation="Horizontal">
+                                <Button Text="Найти" HorizontalOptions="StartAndExpand" Clicked="poisk" VerticalOptions="Center" BackgroundColor="DarkBlue" TextColor="White" CornerRadius="5" />
+                                <Button Text="Назад" Clicked="GoBack_Clicked" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="DarkBlue" TextColor="White" CornerRadius="5" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout x:Name="searchResultsStack">
+                        <Grid Margin="0,0,0,20">
+                            <Grid.RowDefinitions>
+                                <RowDefinition Height="Auto" />
+                                <RowDefinition Height="Auto" />
+                            </Grid.RowDefinitions>
+                            <Grid.ColumnDefinitions>
+                                <ColumnDefinition Width="*" />
+                                <ColumnDefinition Width="*" />
+                            </Grid.ColumnDefinitions>
+                            <!-- Пиджаки -->
+                            <Frame Grid.Row="0" Grid.Column="0" Margin="5" CornerRadius="10" HasShadow="True">
+                                <StackLayout>
+                                    <ImageButton Source="pidzhak_zhenskoe.jpg" Clicked="ImageButton_Clicked1" BackgroundColor="Transparent" Aspect="AspectFill" HeightRequest="200" />
+                                    <Label Text="Пиджаки" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black" />
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Брюки -->
+                            <Frame Grid.Row="0" Grid.Column="1" Margin="5" CornerRadius="10" HasShadow="True">
+                                <StackLayout>
+                                    <ImageButton Source="bruki_zhenskie.jpg" Clicked="ImageButton_Clicked2" BackgroundColor="Transparent" Aspect="AspectFill" HeightRequest="200" />
+                                    <Label Text="Брюки" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black" />
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Футболки -->
+                            <Frame Grid.Row="1" Grid.Column="0" Margin="5" CornerRadius="10" HasShadow="True">
+                                <StackLayout>
+                                    <ImageButton Source="fotbolka_zhenskai.jpg" Clicked="ImageButton_Clicked3" BackgroundColor="Transparent" Aspect="AspectFill" HeightRequest="200" />
+                                    <Label Text="Футболки" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black" />
+                                </StackLayout>
+                            </Frame>
+
+                            <!-- Платья -->
+                            <Frame Grid.Row="1" Grid.Column="1" Margin="5" CornerRadius="10" HasShadow="True">
+                                <StackLayout>
+                                    <ImageButton Source="platy_zhenskie.jpg" Clicked="ImageButton_Clicked4" BackgroundColor="Transparent" Aspect="AspectFill" HeightRequest="200" />
+                                    <Label Text="Платья" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black" />
+                                </StackLayout>
+                            </Frame>
+                        </Grid>
+                    </StackLayout>
+                </StackLayout>
+            </ScrollView>
+            <Frame CornerRadius="15" BorderColor="LightGray" WidthRequest="650" Padding="10">
+                <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Spacing="20">
+                    <StackLayout>
+                        <ImageButton Source="glavnay.png" Clicked="Navigate_Clicked1" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Главная" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="profile.png" Clicked="Navigate_Clicked2" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Профиль" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="izbrannoe.png" Clicked="Navigate_Clicked3" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Избранное" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="korzina.png" Clicked="Navigate_Clicked4" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Корзина" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

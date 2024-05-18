@@ -1,0 +1,110 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilka.Mens"
+             BackgroundColor="#87A0B2">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Bold"/>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="MaxLength" Value="80"/>
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+        <Style TargetType="ImageButton">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#512DA8" />
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+        <ScrollView>
+                <StackLayout Margin="10">
+                    <Label Text="Fast-Shop" HorizontalOptions="Center" VerticalOptions="Start" FontSize="36" HorizontalTextAlignment="Center" FontAttributes="Bold" TextColor="Black" />
+                    <Frame BackgroundColor="#F5F5F5" CornerRadius="20" Padding="10" Margin="0,0,0,20">
+                        <StackLayout Orientation="Horizontal">
+                            <Entry Placeholder="Поиск..." x:Name="SearchEntry" HorizontalOptions="FillAndExpand" VerticalOptions="Center" />
+                            <StackLayout Orientation="Horizontal">
+                                <Button Text="Найти" HorizontalOptions="StartAndExpand" Clicked="poisk" VerticalOptions="Center" BackgroundColor="DarkBlue" TextColor="White" CornerRadius="5" />
+                                <Button Text="Назад" Clicked="GoBack_Clicked" HorizontalOptions="EndAndExpand" VerticalOptions="Center" BackgroundColor="DarkBlue" TextColor="White" CornerRadius="5" />
+                            </StackLayout>
+                        </StackLayout>
+                    </Frame>
+                    <StackLayout x:Name="searchResultsStack">
+                    <Grid Margin="0,0,0,20">
+                    <Grid.RowDefinitions>
+                        <RowDefinition Height="Auto" />
+                        <RowDefinition Height="Auto" />
+                    </Grid.RowDefinitions>
+                    <Grid.ColumnDefinitions>
+                        <ColumnDefinition Width="*" />
+                        <ColumnDefinition Width="*" />
+                    </Grid.ColumnDefinitions>
+                        
+                        <Frame Grid.Row="0" Grid.Column="0" Margin="5" CornerRadius="10" HasShadow="True">
+                            <StackLayout>
+                                <ImageButton Source="kurtka_muzhskay.jpg" Clicked="ImageButton_Clicked1" BackgroundColor="Transparent" Aspect="AspectFill" HeightRequest="200" />
+                                <Label Text="Куртки" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="0" Grid.Column="1" Margin="5" CornerRadius="10" HasShadow="True">
+                            <StackLayout>
+                                <ImageButton Source="bruki_muzhski.jpg" Clicked="ImageButton_Clicked2" BackgroundColor="Transparent" Aspect="AspectFill" HeightRequest="200" />
+                                <Label Text="Штаны" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="0" Margin="5" CornerRadius="10" HasShadow="True">
+                            <StackLayout>
+                                <ImageButton Source="fotbolka_muzhskai.jpg" Clicked="ImageButton_Clicked3" BackgroundColor="Transparent" Aspect="AspectFill" HeightRequest="200" />
+                                <Label Text="Футболки" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black" />
+                            </StackLayout>
+                        </Frame>
+                        <Frame Grid.Row="1" Grid.Column="1" Margin="5" CornerRadius="10" HasShadow="True">
+                            <StackLayout>
+                                <ImageButton Source="kofta.jpg" Clicked="ImageButton_Clicked4" BackgroundColor="Transparent" Aspect="AspectFill" HeightRequest="200" />
+                                <Label Text="Кофты" HorizontalTextAlignment="Center" FontSize="16" TextColor="Black" />
+                            </StackLayout>
+                        </Frame>
+                    </Grid>
+                    </StackLayout>
+            </StackLayout>
+        </ScrollView>
+        <Frame CornerRadius="15" BorderColor="LightGray" WidthRequest="650" Padding="10">
+            <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Spacing="20">
+                <StackLayout>
+                    <ImageButton Source="glavnay.png" Clicked="Navigate_Clicked1" BackgroundColor="Transparent" HeightRequest="40" />
+                    <Label Text="Главная" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                </StackLayout>
+                <StackLayout>
+                    <ImageButton Source="profile.png" Clicked="Navigate_Clicked2" BackgroundColor="Transparent" HeightRequest="40" />
+                    <Label Text="Профиль" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                </StackLayout>
+                <StackLayout>
+                    <ImageButton Source="izbrannoe.png" Clicked="Navigate_Clicked3" BackgroundColor="Transparent" HeightRequest="40" />
+                    <Label Text="Избранное" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                </StackLayout>
+                <StackLayout>
+                    <ImageButton Source="korzina.png" Clicked="Navigate_Clicked4" BackgroundColor="Transparent" HeightRequest="40" />
+                    <Label Text="Корзина" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

@@ -1,0 +1,85 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilka.Profile"
+             BackgroundColor="#87A0B2">
+    <ContentPage.Resources>
+        <Style TargetType="Label">
+            <Setter Property="FontSize" Value="14" />
+            <Setter Property="TextColor" Value="Black" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalTextAlignment" Value="Center" />
+            <Setter Property="FontFamily" Value="Bold"/>
+        </Style>
+        <Style TargetType="Entry">
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="BackgroundColor" Value="White" />
+            <Setter Property="HorizontalOptions" Value="FillAndExpand" />
+            <Setter Property="MaxLength" Value="80"/>
+            <Setter Property="HeightRequest" Value="40" />
+        </Style>
+        <Style TargetType="ImageButton">
+            <Setter Property="BackgroundColor" Value="Transparent"/>
+            <Setter Property="HeightRequest" Value="40"/>
+        </Style>
+        <Style TargetType="Button">
+            <Setter Property="Background" Value="#512DA8" />
+            <Setter Property="WidthRequest" Value="140"/>
+            <Setter Property="TextColor" Value="White" />
+            <Setter Property="CornerRadius" Value="10" />
+            <Setter Property="FontSize" Value="16" />
+            <Setter Property="VerticalOptions" Value="Center" />
+            <Setter Property="HorizontalOptions" Value="Center" />
+        </Style>
+    </ContentPage.Resources>
+    <ContentPage.Content>
+        <StackLayout>
+        <ScrollView>
+        <StackLayout Padding="20" x:Name="profileStackLayout">
+            <Label Text="Fast - Shop" FontSize="36" FontAttributes="Bold" />
+                <Frame CornerRadius="30" HeightRequest="700" WidthRequest="600">
+                    <StackLayout VerticalOptions="Center" HorizontalOptions="Center" Spacing="20">
+                        <Label Text="Профиль" FontSize="24"  />
+                        <Label Text="Фамилия:" />
+                        <Entry Text="" x:Name="lastNameEntry" Placeholder="Введите фамилию" />
+                        <Label Text="Имя:" />
+                        <Entry Text="" x:Name="firstNameEntry" Placeholder="Введите имя" />
+                        <Label Text="Номер:" />
+                        <Entry Text="" x:Name="phoneNumberEntry" Placeholder="Введите номер телефона" />
+                            <Label Text="Email:" />
+                            <Entry x:Name="emailEntry"></Entry>
+                            <Label Text="Дата рождения:" />
+                            <DatePicker  x:Name="birthDateDatePicker" MaximumDate="2009-12-31" />
+                            <StackLayout Orientation="Horizontal" HorizontalOptions="CenterAndExpand">
+                                <Button Text="Сохранить изменения" Clicked="SaveChanges_Clicked" HorizontalOptions="Start"/>
+                                <Button Text="История заказов" Clicked="HistoryButton_Clicked" HorizontalOptions="CenterAndExpand" />
+                            </StackLayout>
+                            <Button Text="Выйти из аккаунта" WidthRequest="200" Clicked="vihod_Clicked" />
+                        </StackLayout>
+                </Frame>
+            </StackLayout>
+        </ScrollView>
+        <Frame   CornerRadius="15" BorderColor="LightGray" WidthRequest="650" Padding="10">
+            <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center" VerticalOptions="EndAndExpand" Spacing="20">
+                <StackLayout>
+                    <ImageButton Source="glavnay.png" Clicked="Navigate_Clicked1"  />
+                    <Label Text="Главная"  />
+                </StackLayout>
+                <StackLayout>
+                    <ImageButton Source="profile.png" Clicked="Navigate_Clicked2"  />
+                    <Label Text="Профиль"  />
+                </StackLayout>
+                <StackLayout>
+                    <ImageButton Source="izbrannoe.png" Clicked="Navigate_Clicked3"  />
+                    <Label Text="Избранное"  />
+                </StackLayout>
+                <StackLayout>
+                    <ImageButton Source="korzina.png" Clicked="Navigate_Clicked4"  />
+                    <Label Text="Корзина" />
+                </StackLayout>
+            </StackLayout>
+        </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>

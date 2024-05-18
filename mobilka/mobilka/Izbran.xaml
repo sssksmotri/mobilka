@@ -1,0 +1,35 @@
+﻿<?xml version="1.0" encoding="utf-8" ?>
+<ContentPage xmlns="http://xamarin.com/schemas/2014/forms"
+             xmlns:x="http://schemas.microsoft.com/winfx/2009/xaml"
+             x:Class="mobilka.Izbran"
+             BackgroundColor="#F5F5F5">
+            
+    <ContentPage.Content>
+        <StackLayout Padding="10" Spacing="10">
+            <Label Text="Избранные товары" FontSize="24" FontAttributes="Bold" HorizontalOptions="Center" />
+            <ScrollView>
+            <StackLayout x:Name="favoriteItemsLayout" Spacing="10"></StackLayout>
+            </ScrollView>
+            <Frame CornerRadius="15" BorderColor="LightGray" WidthRequest="650" Padding="10">
+                <StackLayout Orientation="Horizontal" Padding="10" HorizontalOptions="Center" VerticalOptions="End" Spacing="20">
+                    <StackLayout>
+                        <ImageButton Source="glavnay.png" Clicked="Navigate_Clicked1" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Главная" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="profile.png" Clicked="Navigate_Clicked2" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Профиль" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="izbrannoe.png" Clicked="Navigate_Clicked3" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Избранное" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                    <StackLayout>
+                        <ImageButton Source="korzina.png" Clicked="Navigate_Clicked4" BackgroundColor="Transparent" HeightRequest="40" />
+                        <Label Text="Корзина" HorizontalTextAlignment="Center" FontSize="14" TextColor="Black" />
+                    </StackLayout>
+                </StackLayout>
+            </Frame>
+        </StackLayout>
+    </ContentPage.Content>
+</ContentPage>
