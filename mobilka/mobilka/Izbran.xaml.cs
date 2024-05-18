@@ -127,7 +127,6 @@ namespace mobilka
                         await repository.AddCartItemAsync(cartItem);
                         await DisplayAlert("Добавление", $"Товар {tovar.name} добавлен в корзину", "OK");
                     }
-
                 };
 
                 var removeFromFavoriteButton = new Button
